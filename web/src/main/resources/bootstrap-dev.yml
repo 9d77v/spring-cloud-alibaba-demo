@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: web
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848 # nacos服务器的ip:host
+        namespace: spring-cloud-alibaba-demo # nacos控制台中配置的命名空间
+      config:
+        server-addr: localhost:8848
+        file-extension: yml # 配置文件格式
+        group: ${spring.profiles.active} # 配置所在的组
+        namespace: ${spring.cloud.nacos.discovery.namespace}
+server:
+  port: 7777

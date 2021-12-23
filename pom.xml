@@ -4,45 +4,68 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>groupId</groupId>
+    <groupId>cc._9d77v</groupId>
     <artifactId>spring-cloud-alibaba-demo</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <modules>
         <module>web</module>
+        <module>api</module>
+        <module>hello-service</module>
     </modules>
     <packaging>pom</packaging>
 
     <properties>
-    <spring-cloud-dependencies.version>Hoxton.SR12</spring-cloud-dependencies.version>
+        <spring-boot-dependencies>2.4.6</spring-boot-dependencies>
+        <spring-cloud-dependencies.version>2020.0.1</spring-cloud-dependencies.version>
+        <spring-cloud-alibaba-dependencies>2021.1</spring-cloud-alibaba-dependencies>
+        <spring-cloud-starter-bootstrap>3.0.4</spring-cloud-starter-bootstrap>
+        <jacoco-maven-plugin>0.8.4</jacoco-maven-plugin>
+        <springfox-swagger>2.9.2</springfox-swagger>
+        <swagger-bootstrap-ui>1.9.6</swagger-bootstrap-ui>
     </properties>
     <dependencyManagement>
-    <dependencies>
-        <!--spring-boot-->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-dependencies</artifactId>
-            <version>2.5.6</version>
-            <type>pom</type>
-            <scope>import</scope>
-        </dependency>
-        <!-- spring-cloud -->
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-dependencies</artifactId>
-            <version>Hoxton.SR12</version>
-            <type>pom</type>
-            <scope>import</scope>
-        </dependency>
-        <!-- spring-cloud-alibaba -->
-        <dependency>
-            <groupId>com.alibaba.cloud</groupId>
-            <artifactId>spring-cloud-alibaba-dependencies</artifactId>
-            <version>2.2.5.RELEASE</version>
-            <type>pom</type>
-            <scope>import</scope>
-        </dependency>
-
-    </dependencies>
+        <dependencies>
+            <!--spring-boot-->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring-boot-dependencies}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <!-- spring-cloud -->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud-dependencies.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <!-- spring-cloud-alibaba -->
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+                <version>${spring-cloud-alibaba-dependencies}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-bootstrap</artifactId>
+                <version>${spring-cloud-starter-bootstrap}</version>
+            </dependency>
+            <!-- swagger-->
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger2</artifactId>
+                <version>${springfox-swagger}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger-ui</artifactId>
+                <version>${springfox-swagger}</version>
+            </dependency>
+        </dependencies>
     </dependencyManagement>
 </project>
