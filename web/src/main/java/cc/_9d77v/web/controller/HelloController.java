@@ -12,7 +12,6 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -62,10 +61,13 @@ public class HelloController {
         return R.success(req.getId());
     }
 
-    @ApiOperation(value = "Get请求")
+    @ApiOperation(value = "get请求")
     @GetMapping("/sample/{id}")
     public R<SampleVo> Get(@PathVariable(value = "id") Integer id) {
-        return R.success(data.get(id));
+        if (data.size() == 0 || id > data.size()) {
+            return R.error(404, "数据不存在");
+        }
+        return R.success(data.get(id - 1));
     }
 
     @ApiOperation(value = "list请求")

@@ -2,10 +2,7 @@ package cc._9d77v.web.lib;
 
 public enum REnum {
     SUCCESS(0, "成功"),
-    FAIL(-1, "失败"),
-    AUTH_ERROR(502, "授权失败!"),
-    SERVER_BUSY(503, "服务器正忙，请稍后再试!"),
-    DATABASE_OPERATION_FAILED(504, "数据库操作失败");
+    FAIL(-1, "失败");
     private int code;
     private String message;
 

@@ -30,10 +30,11 @@ public class SwaggerConfig implements WebMvcConfigurer {
         return new ApiInfoBuilder()
                 .title("Spring cloud alibaba API")
                 .description("Spring cloud alibaba演示项目")
-                .contact(new Contact("9d77v","https://github.com/9d77v","9d77v@9d77v.me"))
+                .contact(new Contact("9d77v", "https://github.com/9d77v", "9d77v@9d77v.me"))
                 .version("0.1")
                 .build();
     }
+
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry.addResourceHandler("/doc.html").addResourceLocations("classpath:/META-INF/resources/");
